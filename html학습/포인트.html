@@ -1,0 +1,68 @@
+<meta name="generator" content="Namo WebEditor">
+<%
+dim abc, point
+abc = 154000
+point = 6500
+%>
+<table border="0" cellpadding="0" cellspacing="0" width="457" align="center" height="96">
+ <form name="buy" style="border: 0; margin: 0;">
+ <tr>
+ </tr>
+ <tr>
+ </tr>
+ <tr>
+</td>
+ </tr>
+ <tr>
+  <td width="108" height="24">&nbsp;&nbsp;가격 :</td>
+  <td width="349" height="24">
+  <input type="text" onchange="rebuildPrice()" name="price" size="14" value="<%=abc%>" readonly></td>
+ </tr>
+    <tr>
+  <td width="108" height="24">&nbsp;&nbsp;포인트사용 :</td>
+        <td width="349" height="24">
+            <p>  <input type="text" onkeyup="rebuildPrice()" onchange="rebuildPrice()" name="point" size="14" value="0">
+<input type="text" name="now_point" size="14" value="<%=point%>">
+(현재포인트)</p>
+    </tr>
+ <tr>
+  <td width="108" height="24">&nbsp;&nbsp;회원할인 :</td>
+  <td width="349" height="24"><input type="text" onchange="rebuildPrice()" name="mem" maxlength="2" size="14"value="5,000"  readonly></td>
+ </tr>
+ <tr>
+ <tr>
+  <td width="108" height="24">&nbsp;&nbsp;배송비 :</td>
+  <td width="349" height="24">무료</td>
+ </tr>
+ <tr>
+  <td width="108" height="24">&nbsp;&nbsp;총결재금액 :</td>
+  <td width="349" height="24"><input type="text" name="price_2" maxlength="2" size="14"value="0" readonly></td>
+ </tr>
+</form>
+</table>
+<script type="text/javascript">
+var Use_Point = "<%=point%>"
+ getIntValue=function(ele)
+ {
+  ele.value = parseInt(ele.value.replace(',', ''));
+  return  parseInt(ele.value);
+ }
+ rebuildPrice=function()
+ {
+  var iprice = getIntValue(buy.price);
+  var ipoint = getIntValue(buy.point);
+  var imem = getIntValue(buy.mem);
+  if (ipoint>Use_Point)
+  {
+   alert("사용가능한 포인트는 :"+Use_Point+"입니다.");
+   buy.point.value = "0";
+   rebuildPrice();
+   return false;
+  }
+  var p2 = iprice - (ipoint + imem);
+  buy.price_2.value = p2;
+  buy.now_point.value = Use_Point - ipoint
+ }
+ rebuildPrice();
+</script>
+ 
