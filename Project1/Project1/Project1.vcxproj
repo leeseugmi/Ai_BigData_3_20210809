@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ch4,ch5.c" />
     <ClCompile Include="소스.c" />
     <ClCompile Include="081264.c" />
   </ItemGroup>

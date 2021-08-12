@@ -1,4 +1,4 @@
-#include<stdio.h>
+//#include<stdio.h>
 
 /* int main(void)
 {
@@ -9,9 +9,9 @@
 
 	printf("%f",result);
 }
-*/
 
-/*int main(void)
+
+int main(void)
 {
 	float  num1 = 2.46;
 	float num2 = 3.47;
@@ -22,19 +22,6 @@
 	return 0;
 }*/
 
-/*int main(void)
-{
-	//int num1 = 9, num2 = 2;
-	int num1, num2;
-	scanf_s("%d", &num1);
-	scanf_s("%d", &num2);
-	printf("%d+%d=%d \n", num1, num2, num1 + num2);
-	printf("%d-%d=%d \n", num1, num2, num1 - num2);
-	printf("%d×%d=%d \n", num1, num2, num1 * num2);
-	printf("%d÷%d의 몫=%d \n", num1, num2, num1 / 2);
-	printf("%d÷%d의 나머지=%d \n", num1, num2, num1 % num2);
-	return 0;
-}*/
 
 /*int main(void)
 {
